@@ -25,20 +25,33 @@ const library = [
     }];
 
 
-function loanStatus(library) {
+// function loanStatus(library) {
 
-  for (let i = 0; i < library.length; i++) 
-     {
-      let book = `'${library[i].title}' by '${library[i].author}'.`;
-      if (library[i].isLoaned) {
-        console.log('Out on loan: ' + book);
-      } else
-      {
-       console.log('On the shelf: ' + book);
-      }
-  }
+//   for (let i = 0; i < library.length; i++) 
+//      {
+//       let book = `'${library[i].title}' by '${library[i].author}'.`;
+//       if (library[i].isLoaned) {
+//         console.log('Out on loan: ' + book);
+//       } else
+//       {
+//        console.log('On the shelf: ' + book);
+//       }
+//   }
 
+// }
+
+
+// loanStatus(library);
+
+
+function searchByBookName(library, title) {
+    for (let i = 0; i < library.length; i++) {
+        if (library[i].title === title) {
+            return library[i]
+        }
+    }
+    console.log('Book not found!')
+    return {}
 }
 
-
-loanStatus(library);
+console.log(searchByBookName(library, 'The Road Ahead'));
